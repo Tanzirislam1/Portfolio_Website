@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: NeueMontreal;
+  src: url("../fonts/NeueMontreal-Bold.otf");
+  font-weight: 600;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: NeueMontreal;
+  src: url("../fonts/NeueMontreal-Regular.otf");
+  font-weight: 500;
+  font-display: auto;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "NeueMontreal";
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  background-color: #efeae3;
+  position: relative;
+  padding: 0 3vw;
+}
+
+nav {
+  padding: 2vw 0vw;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#nav-part2 {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+#nav-part2 h4 {
+  padding: 10px 20px;
+  border: 1px solid #00000094;
+  border-radius: 100px;
+  color: #000000a9;
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all ease 0.4s;
+  overflow: hidden;
+}
+
+#nav-part2 h4 a {
+  text-decoration: none;
+  color: #000000a9;
+  position: relative;
+  z-index: 9;
+}
+
+#nav-part2 h4:hover a {
+  color: #fff;
+}
+
+#nav-part2 h4::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  left: 0;
+  bottom: -100%;
+  border-radius: 100px;
+  transition: all ease 0.4s;
+}
+
+#nav-part2 h4:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+/* center part */
+
+#hero-section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+#hero-left {
+  z-index: 2;
+}
+
+#hero-left h2 {
+  font-size: 14vw;
+  font-weight: 600;
+  line-height: 13vw;
+}
+
+#hero-right {
+  z-index: 2;
+}
+
+#hero-right p {
+  font-weight: 500;
+  font-size: 1.5vw;
+  line-height: 2.2vw;
+  width: 65%;
+  margin: 0px auto;
+  margin-top: 235px;
+  z-index: 2;
+}
+
+#hero-shape {
+  position: absolute;
+  height: 30vw;
+  width: 30vw;
+  right: 0;
+}
+
+#hero-shape .circle-shape1 {
+  position: absolute;
+  height: 30vw;
+  width: 30vw;
+  background: linear-gradient(orangered, rgba(255, 64, 0, 0.824));
+  filter: blur(25px);
+  border-radius: 100%;
+  animation-name: anime1;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+#hero-shape .circle-shape2 {
+  position: absolute;
+  height: 30vw;
+  width: 30vw;
+  background: linear-gradient(rgb(255, 68, 0), rgba(255, 98, 0, 0.824));
+  filter: blur(25px);
+  border-radius: 100%;
+  animation-name: anime2;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+@keyframes anime1 {
+  from {
+    transform: translateY(-10%);
+  }
+
+  to {
+    transform: translateY(10%);
+  }
+}
+
+@keyframes anime2 {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(10%);
+  }
+}
+
+/* Page 2 */
+
+#page2 {
+  height: 100vh;
+  width: 100%;
+  background-color: #efeae3;
+  overflow: hidden;
+  /* backface-visibility: hidden; */
+}
+
+#moving-texts {
+  white-space: nowrap;
+  overflow-x: auto;
+  margin-top: 8vw;
+}
+
+#moving-texts::-webkit-scrollbar {
+  display: none;
+}
+
+#moving-texts .text-container {
+  white-space: nowrap;
+  display: inline-block;
+  animation-name: move;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#moving-texts h1 {
+  font-size: 9vw;
+  font-weight: 600;
+  color: #000;
+  display: inline-block;
+}
+
+#circle {
+  width: 65px;
+  height: 65px;
+  background-color: rgb(255, 68, 0);
+  border-radius: 100%;
+  display: inline-block;
+  margin: 0.8vw 2vw;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/*  My goals */
+
+#my-goals {
+  width: 100%;
+  padding: 2vw 3vw;
+  margin-top: 6vw;
+  position: relative;
+}
+
+.my-goals-texts {
+  z-index: 1;
+}
+
+.my-goals-texts h3 {
+  font-size: 3.2vw;
+  font-weight: 600;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.my-goals-texts p {
+  font-size: 1.6vw;
+  font-weight: 500;
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+#my-goals-shape {
+    position: absolute;
+    height: 30vw;
+    width: 30vw;
+    left: 7vw;
+    bottom: -7vw;
+    z-index: 1;
+}
+
+#my-goals-shape .circle-shape1 {
+  position: absolute;
+  height: 30vw;
+  width: 30vw;
+  background: linear-gradient(orangered, rgba(255, 64, 0, 0.824));
+  filter: blur(25px);
+  border-radius: 100%;
+  animation-name: anime1;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
+
+#my-goals-shape .circle-shape2 {
+  position: absolute;
+  height: 30vw;
+  width: 30vw;
+  background: linear-gradient(rgb(255, 68, 0), rgba(255, 98, 0, 0.824));
+  filter: blur(25px);
+  border-radius: 100%;
+  animation-name: anime2;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+  animation-iteration-count: infinite;
+  z-index: 1;
+}
