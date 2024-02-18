@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
+        <div id="mouse-circle"></div>
         <div id="main">
             <div id="page1">
                 <nav>
@@ -23,7 +24,7 @@
                 </nav>
 
                 <div id="hero-section">
-                    <div id="hero-left">
+                    <div id="hero-left" class="cursor-scale">
                         <h2>Creative <br> Developer</h2>
                     </div>
 
@@ -72,7 +73,8 @@
 
                 <div id="my-goals">
                     <div class="my-goals-texts">
-                        <h3>I'm helping startups and business owners to make a
+                        <h3 class="cursor-scale small">I'm helping startups and
+                            business owners to make a
                             visual statement through spotless Web Design and
                             Development so they can increase brand awareness and
                             sell more.</h3>
@@ -86,6 +88,24 @@
                         </div>
                         <div class="circle-shape2">
                         </div>
+                    </div>
+
+                    <div class="my-goals-button">
+                        <a href
+                            class="button button--stroke" data-ipsdialog
+                            data-ipsdialog-size="narrow"
+                            data-ipsdialog-title="Sign Up" data-block="button"
+                            style="--button-stroke: #000;--button-hoverColor: #522424;"
+                            target="_blank" rel="noopener">
+                            <span
+                                class="button__flair"
+                                style="translate: none; rotate: none; scale: none; transform: translate(82.3962%, 120%) scale(0, 0);">
+                            </span>
+                            <span
+                                class="button__label">
+                                Register a new account
+                            </span>
+                        </a>
                     </div>
                 </div>
 
@@ -104,6 +124,6 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
             integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <!-- <script src="./js/script.js"></script>  -->
+        <script src="./js/script.js"></script>
     </body>
 </html>

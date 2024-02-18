@@ -22,7 +22,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: "NeueMontreal";
 }
 
 #page1 {
@@ -31,6 +30,7 @@ body {
   background-color: #efeae3;
   position: relative;
   padding: 0 3vw;
+  backface-visibility: hidden;
 }
 
 nav {
@@ -102,14 +102,17 @@ nav {
   position: relative;
 }
 
+/* z-index for cursor move */
+
 #hero-left {
-  z-index: 2;
+  position: relative;
 }
 
 #hero-left h2 {
   font-size: 14vw;
   font-weight: 600;
   line-height: 13vw;
+  cursor: none;
 }
 
 #hero-right {
@@ -123,7 +126,6 @@ nav {
   width: 65%;
   margin: 0px auto;
   margin-top: 235px;
-  z-index: 2;
 }
 
 #hero-shape {
@@ -190,7 +192,7 @@ nav {
   width: 100%;
   background-color: #efeae3;
   overflow: hidden;
-  /* backface-visibility: hidden; */
+  backface-visibility: hidden;
 }
 
 #moving-texts {
@@ -242,7 +244,7 @@ nav {
 #my-goals {
   width: 100%;
   padding: 2vw 3vw;
-  margin-top: 6vw;
+  margin-top: 3vw;
   position: relative;
 }
 
@@ -271,12 +273,12 @@ nav {
 }
 
 #my-goals-shape {
-    position: absolute;
-    height: 30vw;
-    width: 30vw;
-    left: 7vw;
-    bottom: -7vw;
-    z-index: 1;
+  position: absolute;
+  height: 30vw;
+  width: 30vw;
+  left: 7vw;
+  bottom: -7vw;
+  z-index: 1;
 }
 
 #my-goals-shape .circle-shape1 {
@@ -307,4 +309,107 @@ nav {
   animation-direction: alternate-reverse;
   animation-iteration-count: infinite;
   z-index: 1;
+}
+
+#mouse-circle {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2vw;
+  height: 2vw;
+  background-color: rgb(0, 0, 0);
+  border-radius: 100px;
+  transform: translate(-50%, -50%);
+  transition-duration: .2s;
+  z-index: 100;
+  cursor: none;
+}
+
+/* cursor grow */
+
+.grow{
+  transform: scale(7) !important;
+  background-color: #ffffff !important;
+  mix-blend-mode: difference !important;
+}
+
+.grow-small{
+  transform: scale(3) !important;
+  background-color: #ffffff !important;
+  mix-blend-mode: difference !important;
+}
+
+.my-goals-button{
+  text-align: center;
+}
+
+
+.button {
+  align-items: center;
+  background: 0 0;
+  border: none;
+  border-radius: 6.25rem;
+  color: var(--button-color, var(--button-stroke));
+  cursor: pointer;
+  display: inline-flex;
+  font-size: max(1rem, min(0.38835vw + 0.908981rem, 1.375rem));
+  font-weight: 600;
+  gap: 0.363636em;
+  justify-content: center;
+  letter-spacing: -0.01em;
+  line-height: 1.04545;
+  overflow: hidden;
+  padding: 0.9375rem 1.5rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.button__flair:before {
+  aspect-ratio: 1/1;
+  background: #000000;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 170%;
+}
+
+.button__flair {
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.button--stroke:after {
+  border: 0.125rem solid #000000;
+  border-radius: 6.25rem;
+  content: "";
+  pointer-events: none;
+}
+
+.button--stroke:after,
+.button__border-gradient {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.button.button--stroke:hover {
+  color: #0e100f;
+}
+
+.button__label {
+  position: relative;
+  text-align: center;
+  transition: color 50ms ease-in-out;
 }
